@@ -1,16 +1,22 @@
 import { isRedirectError } from "next/dist/client/components/redirect-error";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 type Options<T> = {
-  actionFn: () => Promise<T>;
+  actionFunction: () => Promise<T>;
   successMessage?: string;
 };
 
-const executeAction = async <T>({
-  actionFn,
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+export async function executeAction<T>({
+  actionFunction,
   successMessage = "The actions was successful",
-}: Options<T>): Promise<{ success: boolean; message: string }> => {
+}: Options<T>): Promise<{ success: boolean; message: string }> {
   try {
-    await actionFn();
+    await actionFunction();
 
     return {
       success: true,
@@ -26,6 +32,4 @@ const executeAction = async <T>({
       message: "An error has occurred during executing the action",
     };
   }
-};
-
-export { executeAction };
+}

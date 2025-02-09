@@ -1,8 +1,13 @@
 "use client";
+
+import { signOut } from "next-auth/react";
+
 import { Button } from "@/components/ui/button";
 
-const SignOut = () => {
-  const handleSignOut = async () => {};
+export function SignOut() {
+  async function handleSignOut() {
+    await signOut();
+  }
 
   return (
     <div className="flex justify-center">
@@ -11,6 +16,4 @@ const SignOut = () => {
       </Button>
     </div>
   );
-};
-
-export { SignOut };
+}

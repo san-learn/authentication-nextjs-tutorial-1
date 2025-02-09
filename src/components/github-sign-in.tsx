@@ -1,19 +1,15 @@
-import { Button } from "@/components/ui/button";
-import { Github } from "@/components/ui/github";
+import { gitHubSignIn } from "@/actions/authentication";
 
-const GithubSignIn = () => {
+import { Button } from "@/components/ui/button";
+import { GitHub } from "@/components/ui/github";
+
+export function GitHubSignIn() {
   return (
-    <form
-      action={async () => {
-        "use server";
-      }}
-    >
+    <form action={gitHubSignIn}>
       <Button className="w-full" variant="outline">
-        <Github />
+        <GitHub />
         Continue with GitHub
       </Button>
     </form>
   );
-};
-
-export { GithubSignIn };
+}
