@@ -9,6 +9,10 @@ I would like to thank:
 - [Code Genix](https://www.youtube.com/@codegenix) for the inspiring YouTube tutorial.
 - The open-source community for the amazing tools and libraries.
 
+## Inspiration & Implementation
+
+While inspired by a YouTube tutorial, I implemented the project with my own coding style and structure, ensuring a unique learning experience.
+
 ## Installation
 
 1. Clone this repository:
